@@ -43,7 +43,7 @@ A node egy string típusú paramétert vár inputként, ami egy JSON formátumú
   "tipus": "inbound",      // vagy "outbound"
   "reszletesseg": "reszletes", // vagy "fejlec"
   "adoszam": "12345678"
-}
+  }
 
 🗝️ Hitelesítés
 A NAV Invoice API Credentials típusú credential tartalmazza:
