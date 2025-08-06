@@ -18,20 +18,16 @@ Egy egyedi `n8n` node a NAV Online Számla rendszeréből történő lekérdezé
 
 1. Klónozd a repót:
 
-```bash
+ 
 git clone https://github.com/cityba/n8n-nav-szamlalekerdezo
 cd n8n-nav-szamlalekerdezo
 Függőségek telepítése:
 
-bash
-Másolás
-Szerkesztés
+ 
 npm install
 Build:
 
-bash
-Másolás
-Szerkesztés
+ 
 npm run build
 Másold a buildelt node-ot az n8n ~/.n8n/custom könyvtárba vagy használd saját csomagként dockeres deployhoz.
 
@@ -39,9 +35,7 @@ Másold a buildelt node-ot az n8n ~/.n8n/custom könyvtárba vagy használd saj�
 🎛️ Paraméterezés
 A node egy string típusú paramétert vár inputként, ami egy JSON formátumú lekérdezés:
 
-json
-Másolás
-Szerkesztés
+ JSON INPUT:
 {
   "datumTol": "2025-03-01",
   "datumIg": "2025-04-01",
@@ -74,9 +68,7 @@ Kimenet megy Spreadsheet File, Postgres, stb. node felé
 A NAV API válasza teljes JSON formátumban visszaadódik, amit n8n feldolgoz.
 
 📁 Fájlstruktúra
-pgsql
-Másolás
-Szerkesztés
+ 
 .
 ├── credentials/
 │   └── NavInvoiceApi.credentials.ts
@@ -90,26 +82,20 @@ Szerkesztés
 🛠️ Build script (ajánlott)
 A package.json-ba ezt add hozzá, hogy az ikonfájl is másolódjon:
 
-json
-Másolás
-Szerkesztés
+ 
 "scripts": {
   "build": "tsc && copyfiles -u 1 icons/* dist/icons"
 }
 Majd:
 
-bash
-Másolás
-Szerkesztés
+ 
 npm install --save-dev copyfiles
 🐞 Hibakeresés
 Ha nem jelenik meg az ikon: győződj meg róla, hogy icons/nav-logo.svg tényleg bemásolódik a dist/ könyvtárba
 
 Fordítási hiba az icon mezőnél? Használd így:
 
-ts
-Másolás
-Szerkesztés
+ 
 icon = 'file:icons/nav-logo.svg';
 🔐 Fejlesztői megjegyzés
 Az ICredentialType interface icon mezője n8n verziótól függően változhat. A legnagyobb kompatibilitás érdekében stringként érdemes használni: 'file:icons/nav-logo.svg'
@@ -133,7 +119,7 @@ A custom `n8n` node for querying the NAV Online Invoice system (`inbound` / `out
 - NAV API access from n8n
 - Input: parameterizable JSON (period, direction, detail, tax number)
 - Output: JSON, which can be exported to Excel, SQL, etc. formats
-- Built-in authentication
+- Built-in authentication data management
 - Custom icon support (`icons/nav-logo.svg`)
 
 ---
@@ -142,20 +128,13 @@ A custom `n8n` node for querying the NAV Online Invoice system (`inbound` / `out
 
 1. Clone the repo:
 
-```bash
 git clone https://github.com/cityba/n8n-nav-szamlalekerdezo
 cd n8n-nav-szamlalekerdezo
 Install dependencies:
 
-bash
-Copy
-Edit
 npm install
 Build:
 
-bash
-Copy
-Edit
 npm run build
 Copy the built node to the n8n ~/.n8n/custom directory or use it as your own package for docker deployment.
 
@@ -163,15 +142,13 @@ Copy the built node to the n8n ~/.n8n/custom directory or use it as your own pac
 🎛️ Parameterization
 The node expects a string type parameter as input, which is a JSON format query:
 
-json
-Copy
-Edit
+JSON INPUT:
 {
 "datumTol": "2025-03-01",
 "datumIg": "2025-04-01",
 "type": "inbound", // or "outbound"
-"detail": "detail", // or "header"
-"id": "12345678"
+"details": "details", // or "header"
+"amount": "12345678"
 }
 🗝️ Authentication
 The NAV Invoice API Credentials type credential contains:
@@ -189,18 +166,16 @@ The node reads and uses these automatically.
 🧪 Example flow
 Set node → set the query JSON
 
-NAV Account Query node → enter the input as an expression:
+NAV Invoice Query node → specify the input as an expression:
 {{ $json }}
 
-Output goes to Spreadsheet File, Postgres, etc. node
+Output goes to Spreadsheet File, Postgres, etc. to node
 
 🧾 Output
 The NAV API response is returned in full JSON format, which is processed by n8n.
 
 📁 File structure
-pgsql
-Copy
-Edit
+
 .
 ├── credentials/
 │ └── NavInvoiceApi.credentials.ts
@@ -214,29 +189,20 @@ Edit
 🛠️ Build script (recommended)
 Add this to package.json to copy the icon file:
 
-json
-Copy
-Edit
 "scripts": {
 "build": "tsc && copyfiles -u 1 icons/* dist/icons"
 }
 Then:
 
-bash
-Copy
-Edit
 npm install --save-dev copyfiles
 🐞 Troubleshooting
 If the icon doesn't appear: make sure icons/nav-logo.svg is actually copied to the dist/ directory
 
 Compile error with the icon field? Use it like this:
 
-ts
-Copy
-Edit
 icon = 'file:icons/nav-logo.svg';
 🔐 Developer Note
-The ICredentialType interface icon field may vary depending on the n8n version. For the best compatibility, use it as a string: 'file:icons/nav-logo.svg'
+The ICredentialType interface icon field may vary depending on the n8n version. For best compatibility, use it as a string: 'file:icons/nav-logo.svg'
 
 👤 Author
 cityba – developer problem solver
