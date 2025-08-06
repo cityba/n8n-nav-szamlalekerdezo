@@ -19,8 +19,8 @@ Egy egyedi `n8n` node a NAV Online Számla rendszeréből történő lekérdezé
 1. Klónozd a repót:
 
 ```bash
-git clone https://github.com/<a-te-repod>/<repo-név>.git
-cd <repo-név>
+git clone https://github.com/cityba/n8n-nav-szamlalekerdezo
+cd n8n-nav-szamlalekerdezo
 Függőségek telepítése:
 
 bash
@@ -143,8 +143,8 @@ A custom `n8n` node for querying the NAV Online Invoice system (`inbound` / `out
 1. Clone the repo:
 
 ```bash
-git clone https://github.com/<your-repo>/<repo-name>.git
-cd <repo-name>
+git clone https://github.com/cityba/n8n-nav-szamlalekerdezo
+cd n8n-nav-szamlalekerdezo
 Install dependencies:
 
 bash
