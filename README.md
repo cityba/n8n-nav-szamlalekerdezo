@@ -37,10 +37,15 @@ A node egy string típusú paramétert vár inputként, ami egy JSON formátumú
   "datumTol": "2025-03-01",
   
   "datumIg": "2025-04-01",
+  
   "tipus": "inbound",           // vagy "outbound"
+  
   "reszletesseg": "reszletes",  // vagy "fejlec"
+  
   "adoszam": "12345678"
+  
 }
+
 🗝️ Hitelesítés
 A NAV Invoice API Credentials típusú credential tartalmazza:
 
@@ -67,11 +72,17 @@ A NAV API válasza teljes JSON formátumban visszaadódik, amit az n8n feldolgoz
 📁 Fájlstruktúra a repóban
 
 dist/
+
 icons/
+
 package.json
+
 README.md
+
 tsconfig.json
+
 .gitignore
+
 🐞 Hibakeresés
 Ha nem jelenik meg az ikon: győződj meg róla, hogy icons/nav-logo.svg tényleg benne van a repóban és az ikonfájl másolódik a dist/icons könyvtárba.
 
