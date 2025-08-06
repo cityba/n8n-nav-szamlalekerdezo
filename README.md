@@ -35,6 +35,7 @@ A node egy string típusú paramétert vár inputként, ami egy JSON formátumú
 
 {
   "datumTol": "2025-03-01",
+  
   "datumIg": "2025-04-01",
   "tipus": "inbound",           // vagy "outbound"
   "reszletesseg": "reszletes",  // vagy "fejlec"
