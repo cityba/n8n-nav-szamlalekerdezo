@@ -36,6 +36,7 @@ Másold a buildelt node-ot az n8n ~/.n8n/custom könyvtárba vagy használd saj�
 A node egy string típusú paramétert vár inputként, ami egy JSON formátumú lekérdezés:
 
  JSON INPUT:
+ 
 {
   "datumTol": "2025-03-01",
   "datumIg": "2025-04-01",
@@ -43,6 +44,7 @@ A node egy string típusú paramétert vár inputként, ami egy JSON formátumú
   "reszletesseg": "reszletes", // vagy "fejlec"
   "adoszam": "12345678"
 }
+
 🗝️ Hitelesítés
 A NAV Invoice API Credentials típusú credential tartalmazza:
 
