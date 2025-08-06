@@ -4,4 +4,4 @@ dist/
 *.local
 package-lock.json
 navle.ts
-src/
+src
